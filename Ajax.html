@@ -1,0 +1,18 @@
+$.ajax({    
+    url : 'https://gc31840f0846900-bdsesion4ciclo03.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/box/box/',
+    data : { id : 123 },
+    type : 'GET',
+    dataType : 'json',
+
+    success : function(json) {
+        $('<h1/>').text(json.title).appendTo('body');
+        $('<div class="content"/>')
+            .html(json.html).appendTo('body');
+    },
+    error : function(xhr, status) {
+        alert('ha sucedido un problema');
+    },
+    complete : function(xhr, status) {
+        alert('Petición realizada');
+    }
+});
